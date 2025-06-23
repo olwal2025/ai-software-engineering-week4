@@ -1,0 +1,108 @@
+{
+  "id": "72e4e6cd-2c52-41cf-8d77-914a1454ddc2",
+  "version": "2.0",
+  "name": "Login_Page",
+  "url": "https://the-internet.herokuapp.com/login",
+  "tests": [{
+    "id": "f6a29713-bb21-4202-bb8b-ef2ace04ddd8",
+    "name": "Valid_login_test",
+    "commands": [{
+      "id": "d175bb9f-66fb-4451-adea-94217f4dd7b5",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d7ae0f7b-5881-4ad3-ba01-1eebba661277",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["css=.\\[\\&\\3Anot\\(\\3Alast-child\\)_ul\\]\\3Apb-1:nth-child(6) > .whitespace-normal:nth-child(3) .whitespace-normal:nth-child(4)", "css:finder"],
+        ["xpath=//li[3]/ul/li[4]", "xpath:position"]
+      ],
+      "value": "tomsmith"
+    }, {
+      "id": "91629e3c-865d-44b9-a3cf-387876882a96",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["css=.\\[\\&\\3Anot\\(\\3Alast-child\\)_ul\\]\\3Apb-1:nth-child(6) > .whitespace-normal:nth-child(3) .whitespace-normal:nth-child(3)", "css:finder"],
+        ["xpath=//ol[2]/li[3]/ul/li[3]", "xpath:position"]
+      ],
+      "value": "SuperSecretPassword!"
+    }, {
+      "id": "a17113d8-9bb3-44c4-9979-a7b501816c55",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-sign-in",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6d51a89b-5fd2-4ec1-8865-73872f7262fa",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#flash.success",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "42d705f0-4f0d-47eb-a79b-ef6248330ecc",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.radius",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "8f2c1fd5-e5f9-486b-88d8-e56eee59cd26",
+    "name": "Invalid_login_test",
+    "commands": [{
+      "id": "49ede34a-bb21-486f-afba-512dfd4437ac",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "71a7c18d-bf73-4b60-8bb0-7188a5862aa5",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [],
+      "value": "invaliduser"
+    }, {
+      "id": "630d5a48-7519-493e-9f03-7ddcbea60731",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [],
+      "value": "wrongpassword"
+    }, {
+      "id": "71673814-0d36-48fc-a4a2-566a1ed60906",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-sign-in",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59459993-ea3a-4e1a-8f0a-1113dc0d7287",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#flash.error",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "f44e27e7-077d-4793-8c87-c4320e56a373",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f6a29713-bb21-4202-bb8b-ef2ace04ddd8"]
+  }],
+  "urls": ["https://the-internet.herokuapp.com/login"],
+  "plugins": []
+}
